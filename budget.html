@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Calculator</title>
+  <link rel="stylesheet" href="budget.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h2>Budget Calculator App</h2>
+
+    <label>Enter Amount</label>
+    <input type="number" id="amount" placeholder="Enter total money">
+
+    <div class="percentages">
+      <input type="number" id="rent" placeholder="Room Rent %">
+      <input type="number" id="accessories" placeholder="Accessories %">
+      <input type="number" id="emergency" placeholder="Emergency %">
+      <input type="number" id="saving" placeholder="Saving %">
+    </div>
+
+    <button id="calcBudget">Evaluate My Money</button>
+
+    <div class="results">
+      <div class="box rent">Room Rent: <span id="rentVal">0</span></div>
+      <div class="box acc">Accessories: <span id="accessoriesVal">0</span></div>
+      <div class="box emer">Emergency: <span id="emergencyVal">0</span></div>
+      <div class="box save">Saving: <span id="savingVal">0</span></div>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function(){
+      $("#calcBudget").click(function(){
+        let total = parseFloat($("#amount").val());
+        let rent = parseFloat($("#rent").val());
+        let acc = parseFloat($("#accessories").val());
+        let emer = parseFloat($("#emergency").val());
+        let save = parseFloat($("#saving").val());
+
+        // Validate positive numbers
+        if(isNaN(total) || total < 0) { 
+          alert("Enter a valid positive amount!"); 
+          return; 
+        }
+        if([rent, acc, emer, save].some(x => isNaN(x) || x < 0)) {
+          alert("Percentages cannot be negative!");
+          return;
+        }
+
+        let sum = rent + acc + emer + save;
+        if(sum !== 100){
+          alert("Percentages must add up to 100!");
+          return;
+        }
+
+        $("#rentVal").text("Rs." + (total * rent / 100).toFixed(2));
+        $("#accessoriesVal").text("Rs." + (total * acc / 100).toFixed(2));
+        $("#emergencyVal").text("Rs." + (total * emer / 100).toFixed(2));
+        $("#savingVal").text("Rs." + (total * save / 100).toFixed(2));
+      });
+
+      // Optional: Prevent manual negative typing
+      $("input[type=number]").on("input", function() {
+        if($(this).val() < 0) $(this).val(0);
+      });
+    });
+  </script>
+
+  <footer>
+    <p>&copy; Budget Calculator. All rights reserved.</p>
+    <p>Akash| akashm23@karunya.edu.in | URK23CS1156</p>
+  </footer>
+</body>
+</html>

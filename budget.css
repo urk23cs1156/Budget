@@ -1,0 +1,102 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: #e0f7fa; /* plain light cyan background */
+    padding: 20px;
+    margin: 0;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    text-align: center;
+  }
+  
+  h2 {
+    margin-bottom: 25px;
+    color: #333;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+  
+  input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  .percentages {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .percentages input {
+    flex: 1;
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    background: #0056b3;
+  }
+  
+  .results {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+    justify-content: center;
+  }
+  
+  .box {
+    flex: 1;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  .rent { background: #17a2b8; }
+  .acc { background: #28a745; }
+  .emer { background: #ffc107; color: black; }
+  .save { background: #dc3545; }
+  
+  footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin: 30px auto 0;
+    border-radius: 10px;
+    font-size: 14px;
+  }
+  footer p {
+    margin: 5px 0;
+  }
